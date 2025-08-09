@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragdoll Archers - Epic Physics-Based Archery Game | Play Online Free</title>
+    <meta name="description" content="Play Ragdoll Archers online - the ultimate physics-based archery game with realistic ragdoll mechanics. Aim, shoot, and watch enemies fall in hilarious ways!">
+    <meta name="keywords" content="ragdoll archers, physics game, archery game, online game, ragdoll physics, browser game">
+    <meta name="author" content="Ragdollarch.shop">
+    <link rel="canonical" href="https://ragdollarch.shop/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ragdoll Archers - Epic Physics-Based Archery Game">
+    <meta property="og:description" content="Experience the most entertaining physics-based archery game with realistic ragdoll mechanics. Play for free!">
+    <meta property="og:url" content="https://ragdollarch.shop/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ragdollarch.shop">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ragdoll Archers - Epic Physics-Based Archery Game">
+    <meta name="twitter:description" content="Play the most entertaining physics-based archery game online for free!">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #007AFF;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #007AFF;
+        }
+        
+        main {
+            padding: 60px 0;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #007AFF, #5856D6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #6e6e73;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .game-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #007AFF, #5856D6, #FF2D92);
+        }
+        
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .content-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .content-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #007AFF, #5856D6);
+            border-radius: 2px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            color: #6e6e73;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #34C759;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #007AFF, #5856D6);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #007AFF;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: #1d1d1f;
+            color: #a1a1a6;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-section {
+                margin-bottom: 40px;
+            }
+            
+            .game-container {
+                padding: 20px;
+                margin-bottom: 40px;
+            }
+            
+            .content-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .content-card {
+                padding: 30px 20px;
+            }
+            
+            .cta-section {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007AFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Ragdollarch.shop</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#game">Play Game</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <h1>Ragdoll Archers</h1>
+                <p class="subtitle">Master the art of physics-based archery in this hilariously entertaining game where precision meets chaos!</p>
+            </section>
+
+            <section class="game-container" id="game">
+                <div class="iframe-wrapper">
+                    <iframe 
+                        src="https://www.crazygames.com/embed/ragdoll-archers"
+                        title="Ragdoll Archers Game"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <article class="content-card" id="about">
+                    <h2>About Ragdoll Archers</h2>
+                    <p>Ragdoll Archers is an incredibly fun physics-based archery game that combines skill, strategy, and hilarious ragdoll mechanics. In this engaging browser game, you'll take control of a skilled archer whose enemies react with realistic physics when hit by your arrows.</p>
+                    
+                    <p>The game features intuitive controls that are easy to learn but challenging to master. Each level presents unique obstacles and enemy formations that require tactical thinking and precise aim. Watch as your enemies fall in spectacularly funny ways thanks to the advanced ragdoll physics engine.</p>
+                </article>
+
+                <article class="content-card" id="features">
+                    <h2>Game Features</h2>
+                    <ul class="feature-list">
+                        <li>Realistic ragdoll physics simulation</li>
+                        <li>Intuitive bow and arrow mechanics</li>
+                        <li>Multiple challenging levels</li>
+                        <li>Strategic gameplay elements</li>
+                        <li>Hilarious enemy reactions</li>
+                        <li>Smooth performance on all devices</li>
+                        <li>Free to play in your browser</li>
+                        <li>No download required</li>
+                    </ul>
+                </article>
+
+                <article class="content-card">
+                    <h2>How to Play</h2>
+                    <p>Playing Ragdoll Archers is simple yet addictive. Use your mouse or touch controls to aim your bow, adjust the power of your shot, and release to fire arrows at your enemies. The realistic physics engine ensures that every shot feels satisfying and authentic.</p>
+                    
+                    <p>Success requires more than just good aim - you'll need to consider trajectory, timing, and environmental factors. Some levels feature moving targets, obstacles, and special challenges that will test your archery skills to the limit.</p>
+                </article>
+
+                <article class="content-card">
+                    <h2>Why You'll Love It</h2>
+                    <p>Ragdoll Archers stands out from other archery games with its perfect blend of realistic physics and entertaining gameplay. The ragdoll mechanics create endless entertainment as enemies react naturally to your shots, often leading to unexpected and hilarious results.</p>
+                    
+                    <p>Whether you're looking for a quick gaming session or hours of entertainment, Ragdoll Archers delivers with its progressively challenging levels and addictive gameplay loop. The game's optimization ensures smooth performance across desktop and mobile devices.</p>
+                </article>
+            </section>
+
+            <section class="cta-section">
+                <h2 style="color: white; margin-bottom: 15px;">Ready to Become an Archer Master?</h2>
+                <p>Join thousands of players who have already discovered the joy of Ragdoll Archers. Test your skills, challenge yourself with increasingly difficult levels, and experience the most entertaining physics-based archery game available online!</p>
+                <a href="#game" class="cta-button">Start Playing Now</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ragdollarch.shop. All rights reserved. | 
+            <a href="mailto:contact@ragdollarch.shop" style="color: #007AFF; text-decoration: none;">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading state for iframe
+        const iframe = document.querySelector('iframe');
+        if (iframe) {
+            iframe.addEventListener('load', function() {
+                console.log('Ragdoll Archers game loaded successfully');
+            });
+        }
+
+        // Simple analytics event tracking
+        function trackGamePlay() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'game_start', {
+                    'game_name': 'ragdoll_archers'
+                });
+            }
+        }
+
+        // Track when user clicks on game area
+        document.querySelector('.iframe-wrapper').addEventListener('click', trackGamePlay);
+    </script>
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Ragdoll Archers",
+        "description": "A physics-based archery game with realistic ragdoll mechanics",
+        "url": "https://ragdollarch.shop/",
+        "genre": ["Action", "Physics", "Archery"],
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</body>
+</html>
